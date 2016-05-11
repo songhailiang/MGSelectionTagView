@@ -58,7 +58,7 @@ self.tagView.delegate = self;
 [self.tagView reloadData];
 ```
 
-下面是一些可选的代理：
+下面是一些可选的代理：<br>
 1、指定某个tag是否选中
 ```objc
 /**
