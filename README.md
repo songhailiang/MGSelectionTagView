@@ -53,6 +53,11 @@ self.tagView.delegate = self;
 }
 ```
 
+3、调用reloadData
+```objc
+[self.tagView reloadData];
+```
+
 下面是一些可选的代理：
 1、指定某个tag是否选中
 ```objc
@@ -100,3 +105,13 @@ self.tagView.delegate = self;
     
     self.resultLabel.text = [selectedTags componentsJoinedByString:@","];
 ```
+
+## 不足
+为了使整个View能根据tag数自适应高度，你需要给View添加一个height的约束，然后在调用reloadData后更改height约束。
+（如果你没有用自动布局，则需要在调用reloadData前先设置好View的宽度）
+```objc
+self.tagViewHeight.constant = CGRectGetHeight(self.tagView.frame);
+```
+
+## 期待
+任何改进意见和pr都是非常受欢迎的
