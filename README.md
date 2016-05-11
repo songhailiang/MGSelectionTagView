@@ -10,3 +10,6 @@
 * 自适应item宽度、高度，也可指定宽度、高度
 * 可自定义不同状态的样式（默认、选中）
 * item间距，line间距可自由设置
+
+# 效果图
+<img src='https://github.com/songhailiang/MGSelectionTagView/blob/master/screenshot.gif' width='320' />
