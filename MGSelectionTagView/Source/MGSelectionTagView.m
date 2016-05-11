@@ -65,7 +65,7 @@
         [subview removeFromSuperview];
     }
     
-    NSAssert(self.dataSource, @"SelectionTagView 必须实现dataSource代理!");
+    NSAssert(self.dataSource, @"MGSelectionTagView 必须实现dataSource代理!");
     //标签总数
     NSInteger total = [self.dataSource numberOfTagsInSelectionTagView:self];
     
@@ -130,6 +130,18 @@
     self.frame = frame;
     //更新选择最多个数
     [self updateMaxSelectStatus];
+}
+
+- (NSArray *)indexesOfSelectionTags {
+    
+    NSMutableArray * mArray = [NSMutableArray array];
+    for (int i = 0; i < self.allButtons.count; i ++) {
+        UIButton * button = [self.allButtons objectAtIndex:i];
+        if (button.selected) {
+            [mArray addObject:@(i)];
+        }
+    }
+    return mArray;
 }
 
 #pragma mark - Private Method
@@ -242,18 +254,6 @@
             }
         }
     }
-}
-
-- (NSArray *)indexesOfSelectionTags {
-    
-    NSMutableArray * mArray = [NSMutableArray array];
-    for (int i = 0; i < self.allButtons.count; i ++) {
-        UIButton * button = [self.allButtons objectAtIndex:i];
-        if (button.selected) {
-            [mArray addObject:@(i)];
-        }
-    }
-    return mArray;
 }
 
 #pragma mark - LazyLoad

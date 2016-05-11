@@ -312,6 +312,7 @@
 				F11A17D01CE1C14A002792D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
